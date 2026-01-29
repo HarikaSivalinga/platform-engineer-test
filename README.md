@@ -80,26 +80,26 @@ PART 2: AWS LAMBDA FUNCTION
 
 In the second part, I implemented an AWS Lambda function that is triggered when the
 Sumo Logic alert fires.
-OBOBOB
-OBWhen the function is invoked, it performs three actions:
-OBOB1. Reboots a specific EC2 instance
-2. Logs the action to Amazon CloudWatch
-OBOBOBOB3. Sends a notification to an SNS topic
-OBOBOB
-OBOBOBThe goal of this function is to automatically recover from potential stuck or overloaded
-application states while keeping the team informed.
-OBOBOBOBOBOB
-The Lambda implementation can be found in:
-OBOBOBlambda_function/lambda_function.py
 
-OBOBOBI deployed and tested the function and verified that the EC2 instance rebooted, logs
-OBOBOBOBwere created in CloudWatch, and the SNS notification was sent successfully.
+When the function is invoked, it performs three actions:
+1. Reboots a specific EC2 instance
+2. Logs the action to Amazon CloudWatch
+3. Sends a notification to an SNS topic
+
+The goal of this function is to automatically recover from potential stuck or overloaded
+application states while keeping the team informed.
+
+The Lambda implementation can be found in:
+lambda_function/lambda_function.py
+
+I deployed and tested the function and verified that the EC2 instance rebooted, logs
+were created in CloudWatch, and the SNS notification was sent successfully.
 
 A recording of the implementation, deployment, and testing is available in:
-OBOBOBOBOBrecordings/part2_lambda.txt
+recordings/part2_lambda.txt
 
 --------------------------------------------------
-OBOBOBOBOBOBOBOBPART 3: INFRASTRUCTURE AS CODE (TERRAFORM)
+PART 3: INFRASTRUCTURE AS CODE (TERRAFORM)
 --------------------------------------------------
 
 In the final part, I used Terraform to provision all required AWS resources in a
