@@ -1,0 +1,12 @@
+_sourceCategory=prod/api
+||json fiels=_raw"endpoint",
+"response
+-time
+-ms"
+|where enpoint="/api/data"
+|where response
+-time_ms>3000
+|timeslice 10m
+|count as slow
+-requests
+|where slow_requests>5
